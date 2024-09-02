@@ -1,0 +1,2 @@
+Synx Write File Test
+Random Text
