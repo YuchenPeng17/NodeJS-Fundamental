@@ -1,0 +1,10 @@
+`${url}` `${ip}
+`${url} ${ip}
+/ ::1
+/ ::1
+/qwoierhgtq[ ::1
+/home ::1
+/ ::1
+/admin ::1
+/admin?code=521 ::1
+/admin?code=521 ::1
