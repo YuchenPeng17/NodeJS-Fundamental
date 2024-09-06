@@ -379,5 +379,133 @@ server.listen(9000, () => {
 
 
 
+### 10. 模块化
+
+**Modularization定义**
+
+- a software design principle
+- breaking down a complex system into smaller, independent, and manageable parts called modules
+
+
+
+**Modularization好处：**
+
+- **Maintainability（可维护性）**: Modular code is easier to update and debug since changes in one module don't affect others.  
+  模块化代码更容易更新和调试，因为一个模块的更改不会影响其他模块。
+
+- **Reusability（可重用性）**: Modules can be reused across different projects, saving time and reducing duplication.  
+  模块可以在不同项目中重复使用，节省时间并减少重复编码。
+
+- **Easier Testing（更容易测试）**: Modules can be tested independently, making it simpler to identify and fix issues.  
+  模块可以独立测试，更容易发现和解决问题。
+
+- **Avoiding Naming Conflicts（避免命名冲突）**: Modules encapsulate their functionality, reducing the risk of global naming conflicts in the codebase.  
+  模块封装了其功能，减少了代码库中全局命名冲突的风险。
+
+
+
+#### Export
+
+```javascript
+// Function Declaration
+function cook(){
+    console.log("Start Cooking...")
+}
+function clean(){
+    console.log("Start Cleaning...")
+}
+
+// 1) Export: module.exports = {}
+module.exports = {
+    cook,
+    clean
+}
+// 2) Export: exports.<> = <>
+exports.cook = cook;
+exports.clean = clean;
+```
+
+`module.exports` = string / number / function ....
+
+- can export any type of variable
+
+`exports` = .... is unable to export
+
+- only `module.exports is` exported, `exports = module.exports = {}`
+- `exports.<..>` is add an attribute to `module.exports`
+
+​    
+
+#### Import
+
+- **`require` is not affected by the working directory.**
+  `require` 不受工作目录的影响。
+
+- **`./` or `../` cannot be omitted for user-created modules.**
+  对于自定义模块，路径中的 `./` 或 `../` 不能省略。
+
+- **When requiring `.js` or `.json` files, the file extension can be omitted (e.g., `./01_me`), and Node.js will first look for a `.js` file, then a `.json` file.**
+  在导入 `.js` 或 `.json` 文件时，文件扩展名可以省略（如 `./01_me`），Node.js 会先查找 `.js` 文件，然后再查找 `.json` 文件。
+
+- **Files with other extensions will be treated as `.js` files.**
+  导入其他扩展名的文件时，会被当作 `.js` 文件处理。
+- **For built-in modules like `http` or `fs`, `./` or `../` is not needed.**
+  对于内置模块如 `http` 或 `fs`，不需要使用 `./` 或 `../`。
+
+
+
+**Import A Folder**
+
+如果是一个文件夹，Node.js 会首先检查文件夹中的 `package.json` 文件的 `main` 属性，找到要导入的文件。
+
+如果 `package.json` 文件不存在或 `main` 属性没有定义，Node.js 会依次查找以下文件：
+
+1. `index.js`
+2. `index.json`
+
+
+
+### 11. 包管理工具
+
+```
+// 创建一个空目录，然后以此目录作为工作目录
+npm init
+```
+
+- package.json 是包的配置文件，每个包都必须要有 package.json
+
+- 网站搜索npm包 网址是 https://www.npmjs.com/
+
+```
+# 格式
+npm install <包名>
+npm i <包名>
+
+# 示例
+npm install uniq
+npm i uniq
+```
+
+`node_modules` 文件夹
+
+`package-lock.json` 包的锁文件
+
+- 安装 uniq 之后， uniq 就是当前这个包的一个 依赖包 ，有时会简称为 依赖
+- 比如我们创建一个包名字为 A，A 中安装了包名字是 B，我们就说 B 是 A 的一个依赖包 ，也会说 A 依赖 B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
