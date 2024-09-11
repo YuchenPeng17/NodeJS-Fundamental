@@ -3,3 +3,5 @@ node_modules/
 Notes/
 
 secret.yaml
+
+.DS_Store
