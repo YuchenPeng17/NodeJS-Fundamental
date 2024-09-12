@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const BookSchema = mongoose.Schema({
     Name: {
         type: String,
-        required: true,
+        unique: true,
     },
     Author: String,
     Price: Number,

@@ -23,6 +23,7 @@ module.exports = function(Success, Error){
   // 3. Set up call-back functions
   // once: only execute the call back function once
   mongoose.connection.once("open", () => {
+    console.log("Connected Successfully")
     Success();
   });
 
