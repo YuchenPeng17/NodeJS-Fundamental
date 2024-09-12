@@ -21,10 +21,18 @@ mongoose.connection.once('open', async ()=>{
     // 5. create schema
     // set attribute and type
     const BookSchema = mongoose.Schema({
-        Name: String,
+        Name: {
+            type: String,
+            required: true,
+        },
         Author: String,
         Price: Number,
-    })
+        Is_Hot: Boolean,
+        Create_Data: {
+            type: Date,
+            default: new Date(),
+        },
+    });
     // 6. create model based on schema
     const BookModel = mongoose.model('Book', BookSchema);
 
