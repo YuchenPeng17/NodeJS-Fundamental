@@ -23,10 +23,13 @@ const Display_Current_Page = async (Page_Index) => {
         .select({ _id: 0, Name: 1, Price: 1 });
         console.log("Page Index: ", Page_Index);
         console.log(result)
+        return;
     }catch(error){
         console.log("Display_Current_Page() Failed.");
         console.log(error);
+        return;
     }
+    return;
 }
 
 DB(() => {

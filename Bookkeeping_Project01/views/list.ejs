@@ -30,24 +30,24 @@
         <hr />
         <div class="accounts">
           <% accounts.forEach(item=> { %>
-            <div class="panel <%= item.type==='-1' ? 'panel-danger' : 'panel-success'  %>">
+            <div class="panel <%= item.type===-1 ? 'panel-danger' : 'panel-success'  %>">
               <div class="panel-heading">
-                <%= item.time %>
+                <%= item.time.toDateString() %>
               </div>
               <div class="panel-body">
                 <div class="col-xs-6">
                   <%= item.title %>
                 </div>
                 <div class="col-xs-2 text-center">
-                  <span class="label <%= item.type==='-1' ? 'label-warning' : 'label-success'  %>">
-                    <%= item.type==='-1' ? '支出' : '收入' %>
+                  <span class="label <%= item.type=== -1 ? 'label-warning' : 'label-success'  %>">
+                    <%= item.type=== -1 ? '支出' : '收入' %>
                   </span>
                 </div>
                 <div class="col-xs-2 text-right">
-                  <%= item.account %> Dollar
+                  <%= item.amount %> Dollar
                 </div>
                 <div class="col-xs-2 text-right">
-                  <a href="/account/<%= item.id %>">
+                  <a class="delBtn" href="/account/<%= item.id %>">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                   </a>
                 </div>
