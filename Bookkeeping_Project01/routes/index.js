@@ -1,21 +1,9 @@
 var express = require("express");
 var router = express.Router();
-
-// Import lowDB
-// {
-// const low = require("lowdb");
-// const FileSync = require("lowdb/adapters/FileSync");
-
-// const adapter = new FileSync(__dirname + "/../data/db.json");
-// const db = low(adapter);
-// }
-// Import Model
+// Import MongoDB Model
 const EntryModel = require("../Models/Model");
 
-// Import shortid
-const shortid = require("shortid");
-
-/* GET home page. */
+/* GET account home page. */
 router.get("/account", async function (req, res, next) {
   let accounts = await EntryModel.find();
   console.log(accounts);
@@ -25,22 +13,12 @@ router.get("/account", async function (req, res, next) {
   });
 });
 
-// Render create entry page
+/* GET create entry page */
 router.get("/account/create", function (req, res, next) {
   res.render("create");
 });
 
-// Create an entry
-// router.post("/account", function (req, res, next) {
-//   let id = shortid.generate();
-//   db.get("accounts")
-//     .unshift({ id: id, ...req.body })
-//     .write();
-  // res.render("success", {
-  //   msg: "Create Successfully!",
-  //   url: "/account",
-  // });
-// });
+/* POST create an entry */
 router.post("/account", async function (req, res, next) {
   req.body.time = new Date(req.body.time);
   try{
@@ -57,7 +35,8 @@ router.post("/account", async function (req, res, next) {
     url: "/account",
   });
 });
-// Remove one entry
+
+/* GET delete an entry */
 router.get("/account/:id", async function (req, res, next) {
   let id = req.params.id;
   // db.get("accounts").remove({ id: id }).write();

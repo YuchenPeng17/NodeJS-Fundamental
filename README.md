@@ -14,9 +14,9 @@ The `Example Code` folder contains subfolders, each focused on a specific Node.j
 
 #### Bookkeeping_Project01
 
-The `Bookkeeping_Project01` is a financial record management application built using **Express**. It incorporates **middleware** for handling HTTP requests, **EJS** for dynamic page rendering, and **LowDB** for lightweight data storage. The project is structured modularly, utilising a **RESTful API** for efficient routing.
+The `Bookkeeping_Project01` is a financial record management application built using **Express**. It incorporates **middleware** for handling HTTP requests, **EJS** for dynamic page rendering, and **LowDB/MongoDB** for lightweight data storage. The project is structured modularly, utilising a **RESTful API** for efficient routing.
 
-
+前后端分离，restful风api
 
 ### Prerequisites
 
