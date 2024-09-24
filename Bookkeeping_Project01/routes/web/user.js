@@ -60,7 +60,7 @@ router.post("/login", async function (req, res, next) {
 });
 
 /* Handle logout */
-router.get("/logout", function (req, res, next) {
+router.post("/logout", function (req, res, next) {
     req.session.destroy(()=>{
         res.render('success', {
             msg: 'Successfully Logout',
