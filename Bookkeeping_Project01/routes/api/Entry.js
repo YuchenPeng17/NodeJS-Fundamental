@@ -1,11 +1,17 @@
 var express = require("express");
 var router = express.Router();
+// Import jwt Token
+var jwt = require('jsonwebtoken');
 // Import MongoDB Model
 const EntryModel = require("../../Models/Model");
+// Import jwt check middleware
+const checkJWT = require("../../middlewares/checkJWT");
+
 
 /* GET all account entries */
-router.get("/account", async function (req, res, next) {
+router.get("/account", checkJWT, async function (req, res, next) {
   let result = null;
+  console.log(req.user);
   try {
     result = await EntryModel.find();
   } catch (error) {
@@ -31,7 +37,7 @@ router.get("/account", async function (req, res, next) {
 });
 
 /* POST create one entry */
-router.post("/account", async function (req, res, next) {
+router.post("/account", checkJWT, async function (req, res, next) {
   // Minor modification on req.body.time
   req.body.time = new Date(req.body.time);
   let result = null;
@@ -65,7 +71,7 @@ router.post("/account", async function (req, res, next) {
 });
 
 /* DELETE an entry */
-router.delete("/account/:id", async function (req, res, next) {
+router.delete("/account/:id", checkJWT, async function (req, res, next) {
   let id = req.params.id;
   let result = null;
   // db.get("accounts").remove({ id: id }).write();
@@ -88,7 +94,7 @@ router.delete("/account/:id", async function (req, res, next) {
 });
 
 /* GET one account entry */
-router.get("/account/:id", async function (req, res, next) {
+router.get("/account/:id", checkJWT, async function (req, res, next) {
   let id = req.params.id;
   let result = null;
   try {
@@ -115,7 +121,7 @@ router.get("/account/:id", async function (req, res, next) {
 });
 
 /* PATCH one account entry */
-router.patch("/account/:id", async function (req, res, next) {
+router.patch("/account/:id", checkJWT, async function (req, res, next) {
   let { id } = req.params;
   let result = null;
   try {
