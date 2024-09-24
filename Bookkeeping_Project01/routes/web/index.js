@@ -5,6 +5,11 @@ const EntryModel = require("../../Models/Model");
 // Import Middleware
 const CheckLoginMiddleware = require('../../middlewares/checkLoginMiddleware')
 
+/* Router for homepage */
+router.get('/', (req, res)=>{
+  res.redirect('/account');
+})
+
 /* GET account home page. */
 router.get("/account", CheckLoginMiddleware, async function (req, res, next) {
   let accounts = await EntryModel.find();
