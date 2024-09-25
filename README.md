@@ -15,9 +15,9 @@ This Node.js project highlights essential concepts such as **buffer**, **fs**, *
 
 The `Example Code` folder contains subfolders, each focused on a specific Node.js topic with practical code examples.
 
-#### Bookkeeping_Project01
+#### BookkeepingApp
 
-The `Bookkeeping_Project01` is a financial record management application built using **Express**.
+The `BookkeepingApp` is a financial record management application built using **Express**.
 
 - **Mongoose**: an **Object Data Modeling (ODM) library** for MongoDB and Node.js.
   - Connection
