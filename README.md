@@ -4,7 +4,7 @@
 
 This Node.js project highlights essential concepts such as **buffer**, **fs**, **path**, **http**, **package management**, **Express**, **MongoDB**, **API**, and **cookie & session management**. It is structured as follows:
 
-1. **Bookkeeping_Project01**: A bookkeeping application that integrates key Node.js features, providing a practical example of server-side development.
+1. **BookkeepingApp**: A bookkeeping application that integrates key Node.js features, providing a practical example of server-side development.
 2. **Example Code**: A collection of standalone examples demonstrating individual Node.js concepts for reference and learning.
 
 
