@@ -2,10 +2,10 @@ var express = require("express");
 var router = express.Router();
 // Import jwt Token
 var jwt = require('jsonwebtoken');
-// Import MongoDB Model
-const EntryModel = require("../../Models/Model");
 // Import jwt check middleware
 const checkJWT = require("../../middlewares/checkJWT");
+// Import MongoDB Model
+const EntryModel = require("../../models/entry");
 
 
 /* GET all account entries */

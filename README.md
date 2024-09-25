@@ -1,8 +1,11 @@
 # NodeJS-Project
 
-### Description
+### **Description**
 
-This Node.js project highlights the use of essential APIs such as Buffer, File System, HTTP, and includes advanced concepts like modular design, package management, Express framework, and Mongoose for database handling. The project provides practical examples that demonstrate how these core features can be applied in real-world scenarios. It’s designed to offer a comprehensive overview of Node.js capabilities, serving as a foundation for developing more sophisticated applications while illustrating best practices in server-side development.
+This Node.js project highlights essential concepts such as **buffer**, **fs**, **path**, **http**, **package management**, **Express**, **MongoDB**, **API**, and **cookie & session management**. It is structured as follows:
+
+1. **Bookkeeping_Project01**: A bookkeeping application that integrates key Node.js features, providing a practical example of server-side development.
+2. **Example Code**: A collection of standalone examples demonstrating individual Node.js concepts for reference and learning.
 
 
 
@@ -14,23 +17,26 @@ The `Example Code` folder contains subfolders, each focused on a specific Node.j
 
 #### Bookkeeping_Project01
 
-The `Bookkeeping_Project01` is a financial record management application built using **Express**. It incorporates **middleware** for handling HTTP requests, **EJS** for dynamic page rendering, and **LowDB/MongoDB** for lightweight data storage. The project is structured modularly, utilising a **RESTful API** for efficient routing.
+The `Bookkeeping_Project01` is a financial record management application built using **Express**.
 
-前后端分离，restful风api
+- **Mongoose**: an **Object Data Modeling (ODM) library** for MongoDB and Node.js.
+  - Connection
+    - In `database/database.js`, establishe a connection to MongoDB.
+    - Sets up event-based callback functions.
+    - Modifies `bin/www` to start the server after a successful MongoDB connection.
+  - Model
+    - In `models/<NAME>.js`, define the schema and create the model for database interactions.
 
-### Prerequisites
+- **MD5:** a **cryptographic** hash function, used for data integrity.
+  - md5(password)
+- **body-parser: ** Parses incoming request bodies in a middleware before your handlers, making the `req.body` property available.
+  - **Query String** Parameters (e.g., ?name=John&age=30) => `req.query.name`
+  - **Route** Parameters (e.g., /user/:id) => `req.params.id`
+  - **Request Headers** => `req.get()`
+  - **Request Body** => `req.body.<Property>`
 
-**Node.js**: The environment for running JavaScript on the server.
-
-**npm**: Handles project dependencies.
-
-**Express**: Framework used to build the server and set up routes.
-
-**LowDB**: Simple local database for lightweight storage needs.
-
-**MongoDB & Mongoose**: Database and ORM for managing and interacting with data.
-
-**body-parser**: Middleware to help parse incoming request data, like form submissions.
+- Cookie, Session & Token 
+- Middleware
 
 
 

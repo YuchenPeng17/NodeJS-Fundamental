@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
 // Import MongoDB Model
-const EntryModel = require("../../Models/Model");
+const EntryModel = require("../../models/entry");
 // Import Middleware
-const CheckLoginMiddleware = require('../../middlewares/checkLoginMiddleware')
+const CheckLoginMiddleware = require('../../middlewares/checkLogin')
 
 /* Router for homepage */
 router.get('/', (req, res)=>{

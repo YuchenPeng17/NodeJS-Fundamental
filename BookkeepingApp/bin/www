@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // Import DB
-const DB = require(__dirname + "/../Database/Database");
+const DB = require(__dirname + "/../database/database");
 DB(() => {
   /**
    * Module dependencies.
