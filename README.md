@@ -31,7 +31,7 @@ The `BookkeepingApp` is a financial record management application built using **
 - **MD5:** a **cryptographic** hash function, used for data integrity.
   - md5(password)
   
-- **body-parser: ** Parses incoming request bodies in a middleware before your handlers, making the `req.body` property available.
+- **body-parser:** Parses incoming request bodies in a middleware before your handlers, making the `req.body` property available.
   - **Query String** Parameters (e.g., ?name=John&age=30) => `req.query.name`
   - **Route** Parameters (e.g., /user/:id) => `req.params.id`
   - **Request Headers** => `req.get()`
